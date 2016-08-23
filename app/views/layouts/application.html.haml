@@ -15,7 +15,8 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => root_path} TIY
+          %a.navbar-brand{:href => root_path}
+            %img(src="logo-white.png" height="28px")
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
@@ -28,7 +29,15 @@
               %input.form-control{:placeholder => "Search", :type => "text"}/
             %button.btn.btn-default{:type => "submit"} Submit
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#"} Signed in?
+            - if logged_in?
+              %li
+                =current_user.name
+              %li
+                = link_to "Log Out", logout_path
+            -else
+              %li
+                =link_to "Login", login_path
+              %li
+                =link_to "Signup", signup_path
   .main-body
     = yield

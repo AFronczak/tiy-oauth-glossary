@@ -5,21 +5,47 @@
       %ul
         - @term.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :definition
-    = f.text_area :definition
-  .field
-    = f.label :author
-    = f.text_field :author
-  .field
-    = f.label :web_link
-    = f.text_field :web_link
-  .field
-    = f.label :category
-    = f.text_field :category
-  .actions
-    = f.submit 'Save'
+  %form.form-horizontal
+    %fieldset
+      .form-group
+        .field
+          = f.label :name
+          = f.text_field :name
+        .field
+          = f.label :definition
+          = f.text_area :definition
+        .field
+          = f.label :author
+          = f.text_field :author
+        .field
+          = f.label :web_link
+          = f.text_field :web_link
+        .field
+          = f.label :category
+          = f.text_field :category
+        .actions
+          = f.submit 'Save'
+-# %form.form-horizontal
+-#   %fieldset
+-#     %legend Legend
+-#     .form-group
+-#       %label.col-lg-2.control-label{:for => :name} Name
+-#       .col-lg-10
+-#         %input#inputEmail.form-control{:placeholder => "Name", :type => "text"}/
+-#     .form-group
+-#       %label.col-lg-2.control-label{:for => "inputPassword"} Password
+-#       .col-lg-10
+-#         %input#inputPassword.form-control{:placeholder => "Password", :type => "password"}/
+-#         .checkbox
+-#           %label
+-#             %input{:type => "checkbox"}/
+-#             Checkbox
+-#     .form-group
+-#       %label.col-lg-2.control-label{:for => "textArea"} Textarea
+-#       .col-lg-10
+-#         %textarea#textArea.form-control{:rows => "3"}
+-#         %span.help-block A longer block of help text that breaks onto a new line and may extend beyond one line.
+-#     .form-group
+-#       .col-lg-10.col-lg-offset-2
+-#         %button.btn.btn-default{:type => "reset"} Cancel
+-#         %button.btn.btn-primary{:type => "submit"} Submit
